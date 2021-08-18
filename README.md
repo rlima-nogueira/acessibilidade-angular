@@ -17,6 +17,11 @@ Busca todo mundo que é filho do elemento no qual a diretiva KeyboardManagerDire
 
 <img src="src/assets/img/contentchildren.png">
 
-Essa implementação, nos possibilita trazer as opções dentro de um array. 
+Essa implementação, nos possibilita trazer as opções dentro de um array por causa da <b><i>QueryList</i></b>. 
 
 <img src="src/assets/img/contentchildrenresultado.png">
+
+</br><h3><b>QueryList</b></h3>
+Sempre que uue um elemento filho é adicionado, removido ou movido, a lista de consulta será atualizada e as alterações observáveis na lista de consulta emitirão um novo valor.
+
+
