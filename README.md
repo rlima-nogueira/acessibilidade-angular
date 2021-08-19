@@ -24,8 +24,7 @@ Essa implementação, nos possibilita trazer as opções dentro de um array por 
 </br><h3><b>QueryList</b></h3>
 Sempre que uue um elemento filho é adicionado, removido ou movido, a lista de consulta será atualizada e as alterações observáveis na lista de consulta emitirão um novo valor.
 
-Site para verificar as regras oficiais de acessibilidade: 
-https://www.w3c.br/traducoes/wcag/wcag21-pt-BR/
+
 
 </br>
 
@@ -72,6 +71,12 @@ Quando usamos as tags semânticas do HTML, tornamos o trabalho de transformar o 
       </label>
   </div>
 </div>
+```
 
 
+Site para verificar as regras oficiais de acessibilidade: 
+https://www.w3c.br/traducoes/wcag/wcag21-pt-BR/
+
+Extensão do chrome para testar a acessibilidade: </br>
+<b>ChromeVox</b>
 
