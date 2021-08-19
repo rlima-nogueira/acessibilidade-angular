@@ -33,7 +33,6 @@ export class KeyboardManagerDirective {
   }
 
   public moveFocus(direction: ArrowDirection): KeyboardManagedItemDirective {
-    debugger
     const items = this.items.toArray();
     const currentSelectedIndex = items.findIndex(item => item.isFocused());
     const targetElementFocus = items[currentSelectedIndex + direction];
