@@ -9,24 +9,45 @@ export class KeyboardManagerDirective {
 
   constructor() { }
 
-  @ContentChildren(KeyboardManagerDirective) public items: QueryList<KeyboardManagedItemDirective> = null;
+  @ContentChildren(KeyboardManagedItemDirective) public items: QueryList<KeyboardManagedItemDirective> = null;
   @HostListener('keyup', ['$event'])
   public manageKeys(event: KeyboardEvent): void {
     switch (event.key) {
       case 'ArrowUp':
         console.log(this.items);
-        console.log('pra cima');
+        this.moveFocus(ArrowDirection.RIGHT).focus();
         break;
       case 'ArrowDown':
-        console.log('pra baixo');
+        console.log(this.items);
+        this.moveFocus(ArrowDirection.LEFT).focus();
         break;
       case 'ArrowLeft':
-        console.log('pra esquerda');
+        console.log(this.items);
+        this.moveFocus(ArrowDirection.LEFT).focus();
         break;
       case 'ArrowRight':
-        console.log('pra direita');
+        console.log(this.items);
+        this.moveFocus(ArrowDirection.RIGHT).focus();
         break;
     }
   }
 
+  public moveFocus(direction: ArrowDirection): KeyboardManagedItemDirective {
+    debugger
+    const items = this.items.toArray();
+    const currentSelectedIndex = items.findIndex(item => item.isFocused());
+    const targetElementFocus = items[currentSelectedIndex + direction];
+    if (targetElementFocus) {
+      return targetElementFocus;
+    }
+
+    return direction === ArrowDirection.LEFT ? items[items.length - 1] : items[0];
+  }
+
+}
+
+
+enum ArrowDirection {
+  LEFT = -1,
+  RIGHT = 1
 }
